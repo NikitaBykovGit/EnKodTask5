@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app__container {
+    margin: 66px 48px;
+    width: 1302px;
+}
+
+.app__container p {
+    margin-top: 16px;
+}
