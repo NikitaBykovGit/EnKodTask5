@@ -1,4 +1,4 @@
-import { Directive, Input, HostListener, ElementRef, OnInit } from "@angular/core";
+import { Directive, Input, ElementRef, SecurityContext } from "@angular/core";
 import { Observable } from 'rxjs';
 
 @Directive({
@@ -11,17 +11,16 @@ export class SelectDirective {
 
     ngOnInit() {
         let str: string = this.el.nativeElement.textContent;
-        let newStr: string = ""
+        let newStr: string = ""  
         this.text$.subscribe(value => {
             if (value) {
                 let pos = -1;
                 while ((pos = str.indexOf(value, pos + 1)) != -1) {
-                    console.log(str.slice(pos, value.length));
-                    newStr = str.replace(str.slice(pos, value.length), (match: string)=>{
-                        return `<mark>${match}</mark>`
+                    newStr = str.replace(str.slice(pos, pos + value.length), (match: string)=>{
+                        return `<span style="background:${this.color}">${match}</span>`
                     })
-                } 
-                this.el.nativeElement.textContent = newStr;   
+                }
+                this.el.nativeElement.innerHTML = newStr;   
             } else {
                 this.el.nativeElement.textContent = str;
             }
