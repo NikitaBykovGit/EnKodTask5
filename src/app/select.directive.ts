@@ -1,4 +1,4 @@
-import { Directive, Input, ElementRef, SecurityContext } from "@angular/core";
+import { Directive, Input, ElementRef } from "@angular/core";
 import { Observable } from 'rxjs';
 
 @Directive({

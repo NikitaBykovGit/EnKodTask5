@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TuiInputModule } from '@taiga-ui/kit';
+import { TuiTextfieldControllerModule } from '@taiga-ui/core';
 
 import { AppComponent } from './app.component';
 import { SelectDirective } from './select.directive'
@@ -22,7 +23,8 @@ import { SelectDirective } from './select.directive'
     TuiDialogModule,
     TuiAlertModule,
     TuiInputModule,
-    TuiSvgModule
+    TuiSvgModule,
+    TuiTextfieldControllerModule
 ],
   providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]

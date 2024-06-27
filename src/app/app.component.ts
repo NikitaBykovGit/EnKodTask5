@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
       <div class="app__container">
         <tui-input
           [formControl]="searchControl"
-          tuiTextfieldSize="s"
-          tuiTextfieldIcon="tuiIconSearchLarge">
+          tuiTextfieldIconLeft="tuiIconSearchLarge"
+          [tuiTextfieldCleaner]="true">
           Type a text
           <input tuiTextfield />
         </tui-input>
